@@ -12,8 +12,18 @@ body:has(#start:not(.hide)) .sub{font-weight:800;color:#fff4b8;font-size:clamp(1
 #start .classic-panel p{font-size:clamp(15px,2.5vw,19px);font-weight:800;color:#20365f}
 #start .classic-panel .btn{font-size:clamp(18px,3vw,25px);background:linear-gradient(#ffdf76,#ffad24);border:2px solid #f8edb3;box-shadow:0 6px 0 #9b5611}
 @media(max-width:480px){#start .classic-diet{width:100%;height:auto;border-width:4px;margin:15px auto 18px}#start .classic-panel{padding:15px 12px 19px}}
+
+body:has(#start:not(.hide)){background:#1386e9}
+body:has(#start:not(.hide)) main{max-width:none;padding:0}
+body:has(#start:not(.hide)) main>.pill,body:has(#start:not(.hide)) main>h1,body:has(#start:not(.hide)) main>.sub,body:has(#start:not(.hide)) main>.foot{display:none}
+#start.classic-start{max-width:none;margin:0}
+.cover{position:relative;width:100%;max-width:1536px;margin:0 auto}
+.cover img{display:block;width:100%;height:auto}
+.cover-start{position:absolute;left:44%;bottom:2.5%;width:39%;height:11%;border:3px solid #ffdb65;border-radius:100px;background:linear-gradient(#ff4d35,#bd0013);color:#fff;font-size:clamp(12px,2.6vw,35px);font-weight:900;text-shadow:0 3px 3px #640000;box-shadow:0 5px 10px #0007;cursor:pointer}
+.cover-start:hover{filter:brightness(1.1)}
+@media(max-width:600px){.cover-start{left:42%;width:42%;height:12%;font-size:clamp(10px,2.4vw,16px);border-width:2px}}
 </style></head><body><main><div class="pill">🏛 遊びながら政治を知ろう！</div><h1>松原仁の<br>国会クイズ</h1><p class="sub">国会議事堂を探検しながら、全10問に挑戦！</p>
-<section id="start" class="classic-start"><img class="classic-diet" src="hero.webp" alt="国会議事堂と松原仁キャラクター"><div class="classic-panel"><p>🏛️ 国会議事堂を探検しながら全10問に挑戦！<br>正解して次の部屋へ進もう！</p><button class="btn" onclick="startGame()">🎮 国会探検スタート！</button></div></section>
+<section id="start" class="classic-start"><div class="cover"><img src="表紙.png" alt="松原仁の国会クイズ ゲーム画面"><button class="cover-start" onclick="startGame()" aria-label="国会クイズをスタート">国会クイズをスタート ▶</button></div></section>
 <section id="game" class="hide"><div class="mapline" id="route"></div><div class="progress"><div id="bar" style="width:0%"></div></div><div class="pill" id="place"></div><div class="panel"><div class="stat" id="counter"></div><div class="question" id="question"></div><div id="options"></div><div id="result" class="hide"><img class="feedback" id="reaction" alt="回答結果"><div id="answerMessage" class="question"></div><div class="explain" id="explain"></div><button class="btn" id="next" onclick="nextQuestion()">次の部屋へ進む ➜</button></div></div></section>
 <section id="finish" class="hide"><img class="hero" id="finishImage" src="win.webp" alt="全問正解 おめでとうございます"><div class="panel"><h2 id="finishTitle"></h2><p id="finishText"></p><button class="btn" onclick="startGame()">🔁 もう一度挑戦する</button></div></section>
 <p class="foot">国会について学ぶ非公式の教育用ゲームです。特定の政治家・団体の公式制作物ではありません。</p></main><script>
